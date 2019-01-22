@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GMLoadingView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gay-Bc-3dt">
+                    <rect key="frame" x="47" y="256" width="281" height="155"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在录制紧急录像..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtY-Li-hJt">
+                            <rect key="frame" x="60" y="100" width="161" height="25"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.066666666669999999" alpha="0.89605629279999999" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="RB4-X8-GyP">
+                            <rect key="frame" x="130.5" y="40" width="20" height="20"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="0.90062607020547958" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="RB4-X8-GyP" firstAttribute="top" secondItem="Gay-Bc-3dt" secondAttribute="top" constant="40" id="CpH-6j-boW"/>
+                        <constraint firstItem="GtY-Li-hJt" firstAttribute="centerX" secondItem="Gay-Bc-3dt" secondAttribute="centerX" id="M0O-h9-Hut"/>
+                        <constraint firstItem="RB4-X8-GyP" firstAttribute="centerX" secondItem="Gay-Bc-3dt" secondAttribute="centerX" id="b6X-Sj-CZj"/>
+                        <constraint firstAttribute="height" constant="155" id="qSA-P2-FX6"/>
+                        <constraint firstAttribute="bottom" secondItem="GtY-Li-hJt" secondAttribute="bottom" constant="30" id="tbk-Ru-bmG"/>
+                        <constraint firstItem="GtY-Li-hJt" firstAttribute="top" relation="lessThanOrEqual" secondItem="RB4-X8-GyP" secondAttribute="bottom" constant="40" id="wqS-5e-Npy"/>
+                        <constraint firstAttribute="width" constant="281" id="zUI-KL-SVE"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Gay-Bc-3dt" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="c9x-ev-TTh"/>
+                <constraint firstItem="Gay-Bc-3dt" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="r66-Hz-QHJ"/>
+            </constraints>
+            <connections>
+                <outlet property="contentView" destination="Gay-Bc-3dt" id="l7D-qz-s2l"/>
+                <outlet property="indicatorView" destination="RB4-X8-GyP" id="a2B-SN-OLT"/>
+                <outlet property="textLabel" destination="GtY-Li-hJt" id="s8o-Iy-fEs"/>
+            </connections>
+        </view>
+    </objects>
+</document>
