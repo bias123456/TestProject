@@ -1,0 +1,877 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D7954D52D3A703263657E7E /* Pods_GMVideoEffectDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4CF030ED1D0B9ECB6C6376 /* Pods_GMVideoEffectDemo.framework */; };
+		2C27371321F6C6D7001A39FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C27371221F6C6D7001A39FD /* AppDelegate.m */; };
+		2C27371621F6C6D7001A39FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C27371521F6C6D7001A39FD /* ViewController.m */; };
+		2C27371921F6C6D7001A39FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C27371721F6C6D7001A39FD /* Main.storyboard */; };
+		2C27371B21F6C6D9001A39FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C27371A21F6C6D9001A39FD /* Assets.xcassets */; };
+		2C27371E21F6C6D9001A39FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C27371C21F6C6D9001A39FD /* LaunchScreen.storyboard */; };
+		2C27372121F6C6D9001A39FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C27372021F6C6D9001A39FD /* main.m */; };
+		2C27372B21F6C6D9001A39FD /* GMVideoEffectDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C27372A21F6C6D9001A39FD /* GMVideoEffectDemoTests.m */; };
+		2C27373621F6C6D9001A39FD /* GMVideoEffectDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C27373521F6C6D9001A39FD /* GMVideoEffectDemoUITests.m */; };
+		2C27374C21F6C7C2001A39FD /* VEMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C27374921F6C7C2001A39FD /* VEMainViewController.m */; };
+		2C27374D21F6C7C2001A39FD /* VEMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C27374A21F6C7C2001A39FD /* VEMainViewController.xib */; };
+		2C27375021F6C91C001A39FD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C27374F21F6C91C001A39FD /* AVFoundation.framework */; };
+		2C27375221F6C926001A39FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C27375121F6C926001A39FD /* CoreGraphics.framework */; };
+		2C27375621F6C96D001A39FD /* GMVideoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C27375521F6C96D001A39FD /* GMVideoService.m */; };
+		2C27376621F6C9AA001A39FD /* 01_nebula.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2C27375921F6C9AA001A39FD /* 01_nebula.mp4 */; };
+		2C27376721F6C9AA001A39FD /* 03_nebula.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2C27375A21F6C9AA001A39FD /* 03_nebula.mp4 */; };
+		2C27376821F6C9AA001A39FD /* 04_quasar.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2C27375B21F6C9AA001A39FD /* 04_quasar.mp4 */; };
+		2C27376921F6C9AA001A39FD /* 02_blackhole.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2C27375C21F6C9AA001A39FD /* 02_blackhole.mp4 */; };
+		2C27376A21F6C9AA001A39FD /* 05_blackhole.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2C27375D21F6C9AA001A39FD /* 05_blackhole.mp4 */; };
+		2C27376B21F6C9AA001A39FD /* 02 Keep Going.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2C27376021F6C9AA001A39FD /* 02 Keep Going.m4a */; };
+		2C27376C21F6C9AA001A39FD /* 01 Star Gazing.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2C27376121F6C9AA001A39FD /* 01 Star Gazing.m4a */; };
+		2C27376D21F6C9AA001A39FD /* John F. Kennedy.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2C27376321F6C9AA001A39FD /* John F. Kennedy.m4a */; };
+		2C27376E21F6C9AA001A39FD /* Carl Sagan.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2C27376421F6C9AA001A39FD /* Carl Sagan.m4a */; };
+		2C27376F21F6C9AA001A39FD /* Ronald Reagan.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2C27376521F6C9AA001A39FD /* Ronald Reagan.m4a */; };
+		2C45776D21F6ED2E008F9607 /* AVVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C45775121F6ED2E008F9607 /* AVVideoPlayerViewController.m */; };
+		2C45777121F6F00A008F9607 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C45777021F6F00A008F9607 /* NSString+Utils.m */; };
+		3ECD223A2C7AA68B07A4EF0A /* Pods_GMVideoEffectDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E336AB05F5B31D7E31E19063 /* Pods_GMVideoEffectDemoTests.framework */; };
+		49ACE3CFB09DD059C95079B8 /* Pods_GMVideoEffectDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A0C72D64222F05B96E759F /* Pods_GMVideoEffectDemoUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2C27372721F6C6D9001A39FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C27370621F6C6D7001A39FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C27370D21F6C6D7001A39FD;
+			remoteInfo = GMVideoEffectDemo;
+		};
+		2C27373221F6C6D9001A39FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C27370621F6C6D7001A39FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C27370D21F6C6D7001A39FD;
+			remoteInfo = GMVideoEffectDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2C27370E21F6C6D7001A39FD /* GMVideoEffectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMVideoEffectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C27371121F6C6D7001A39FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2C27371221F6C6D7001A39FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2C27371421F6C6D7001A39FD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2C27371521F6C6D7001A39FD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2C27371821F6C6D7001A39FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2C27371A21F6C6D9001A39FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C27371D21F6C6D9001A39FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2C27371F21F6C6D9001A39FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C27372021F6C6D9001A39FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2C27372621F6C6D9001A39FD /* GMVideoEffectDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GMVideoEffectDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C27372A21F6C6D9001A39FD /* GMVideoEffectDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMVideoEffectDemoTests.m; sourceTree = "<group>"; };
+		2C27372C21F6C6D9001A39FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C27373121F6C6D9001A39FD /* GMVideoEffectDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GMVideoEffectDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C27373521F6C6D9001A39FD /* GMVideoEffectDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMVideoEffectDemoUITests.m; sourceTree = "<group>"; };
+		2C27373721F6C6D9001A39FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C27374921F6C7C2001A39FD /* VEMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VEMainViewController.m; sourceTree = "<group>"; };
+		2C27374A21F6C7C2001A39FD /* VEMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VEMainViewController.xib; sourceTree = "<group>"; };
+		2C27374B21F6C7C2001A39FD /* VEMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VEMainViewController.h; sourceTree = "<group>"; };
+		2C27374F21F6C91C001A39FD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2C27375121F6C926001A39FD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2C27375421F6C96D001A39FD /* GMVideoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMVideoService.h; sourceTree = "<group>"; };
+		2C27375521F6C96D001A39FD /* GMVideoService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMVideoService.m; sourceTree = "<group>"; };
+		2C27375921F6C9AA001A39FD /* 01_nebula.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 01_nebula.mp4; sourceTree = "<group>"; };
+		2C27375A21F6C9AA001A39FD /* 03_nebula.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 03_nebula.mp4; sourceTree = "<group>"; };
+		2C27375B21F6C9AA001A39FD /* 04_quasar.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04_quasar.mp4; sourceTree = "<group>"; };
+		2C27375C21F6C9AA001A39FD /* 02_blackhole.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 02_blackhole.mp4; sourceTree = "<group>"; };
+		2C27375D21F6C9AA001A39FD /* 05_blackhole.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 05_blackhole.mp4; sourceTree = "<group>"; };
+		2C27376021F6C9AA001A39FD /* 02 Keep Going.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "02 Keep Going.m4a"; sourceTree = "<group>"; };
+		2C27376121F6C9AA001A39FD /* 01 Star Gazing.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "01 Star Gazing.m4a"; sourceTree = "<group>"; };
+		2C27376321F6C9AA001A39FD /* John F. Kennedy.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "John F. Kennedy.m4a"; sourceTree = "<group>"; };
+		2C27376421F6C9AA001A39FD /* Carl Sagan.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Carl Sagan.m4a"; sourceTree = "<group>"; };
+		2C27376521F6C9AA001A39FD /* Ronald Reagan.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ronald Reagan.m4a"; sourceTree = "<group>"; };
+		2C45775121F6ED2E008F9607 /* AVVideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVVideoPlayerViewController.m; sourceTree = "<group>"; };
+		2C45775221F6ED2E008F9607 /* GMVideoPlayerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMVideoPlayerProtocol.h; sourceTree = "<group>"; };
+		2C45775321F6ED2E008F9607 /* AVVideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVVideoPlayerViewController.h; sourceTree = "<group>"; };
+		2C45776F21F6F00A008F9607 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
+		2C45777021F6F00A008F9607 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
+		5856E36255A87FCB77A64C16 /* Pods-GMVideoEffectDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMVideoEffectDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GMVideoEffectDemo/Pods-GMVideoEffectDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		6B4CF030ED1D0B9ECB6C6376 /* Pods_GMVideoEffectDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GMVideoEffectDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8CAF9496A218C2E2A6A8CA8 /* Pods-GMVideoEffectDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMVideoEffectDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GMVideoEffectDemoUITests/Pods-GMVideoEffectDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B03356D0E5DD7824061B6988 /* Pods-GMVideoEffectDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMVideoEffectDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GMVideoEffectDemoUITests/Pods-GMVideoEffectDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C3A0C72D64222F05B96E759F /* Pods_GMVideoEffectDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GMVideoEffectDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF505C6D03115F1994E7B6F7 /* Pods-GMVideoEffectDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMVideoEffectDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GMVideoEffectDemoTests/Pods-GMVideoEffectDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		E336AB05F5B31D7E31E19063 /* Pods_GMVideoEffectDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GMVideoEffectDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5658623F4EE45A2AB3D45EE /* Pods-GMVideoEffectDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMVideoEffectDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GMVideoEffectDemo/Pods-GMVideoEffectDemo.release.xcconfig"; sourceTree = "<group>"; };
+		FC312998F09BFFA77412A0CE /* Pods-GMVideoEffectDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMVideoEffectDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GMVideoEffectDemoTests/Pods-GMVideoEffectDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C27370B21F6C6D7001A39FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C27375221F6C926001A39FD /* CoreGraphics.framework in Frameworks */,
+				2C27375021F6C91C001A39FD /* AVFoundation.framework in Frameworks */,
+				1D7954D52D3A703263657E7E /* Pods_GMVideoEffectDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C27372321F6C6D9001A39FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ECD223A2C7AA68B07A4EF0A /* Pods_GMVideoEffectDemoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C27372E21F6C6D9001A39FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49ACE3CFB09DD059C95079B8 /* Pods_GMVideoEffectDemoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C27370521F6C6D7001A39FD = {
+			isa = PBXGroup;
+			children = (
+				2C27371021F6C6D7001A39FD /* GMVideoEffectDemo */,
+				2C27372921F6C6D9001A39FD /* GMVideoEffectDemoTests */,
+				2C27373421F6C6D9001A39FD /* GMVideoEffectDemoUITests */,
+				2C27370F21F6C6D7001A39FD /* Products */,
+				2C27374E21F6C91C001A39FD /* Frameworks */,
+				4CE4910C0B35484272AC2B15 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		2C27370F21F6C6D7001A39FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C27370E21F6C6D7001A39FD /* GMVideoEffectDemo.app */,
+				2C27372621F6C6D9001A39FD /* GMVideoEffectDemoTests.xctest */,
+				2C27373121F6C6D9001A39FD /* GMVideoEffectDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C27371021F6C6D7001A39FD /* GMVideoEffectDemo */ = {
+			isa = PBXGroup;
+			children = (
+				2C45770821F6ED2E008F9607 /* Utils */,
+				2C27375721F6C9AA001A39FD /* Resources */,
+				2C27375321F6C96D001A39FD /* GMVideoService */,
+				2C27374821F6C7C2001A39FD /* VEMainViewController */,
+				2C27371121F6C6D7001A39FD /* AppDelegate.h */,
+				2C27371221F6C6D7001A39FD /* AppDelegate.m */,
+				2C27371421F6C6D7001A39FD /* ViewController.h */,
+				2C27371521F6C6D7001A39FD /* ViewController.m */,
+				2C27371721F6C6D7001A39FD /* Main.storyboard */,
+				2C27371A21F6C6D9001A39FD /* Assets.xcassets */,
+				2C27371C21F6C6D9001A39FD /* LaunchScreen.storyboard */,
+				2C27371F21F6C6D9001A39FD /* Info.plist */,
+				2C27372021F6C6D9001A39FD /* main.m */,
+			);
+			path = GMVideoEffectDemo;
+			sourceTree = "<group>";
+		};
+		2C27372921F6C6D9001A39FD /* GMVideoEffectDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				2C27372A21F6C6D9001A39FD /* GMVideoEffectDemoTests.m */,
+				2C27372C21F6C6D9001A39FD /* Info.plist */,
+			);
+			path = GMVideoEffectDemoTests;
+			sourceTree = "<group>";
+		};
+		2C27373421F6C6D9001A39FD /* GMVideoEffectDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2C27373521F6C6D9001A39FD /* GMVideoEffectDemoUITests.m */,
+				2C27373721F6C6D9001A39FD /* Info.plist */,
+			);
+			path = GMVideoEffectDemoUITests;
+			sourceTree = "<group>";
+		};
+		2C27374821F6C7C2001A39FD /* VEMainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2C27374B21F6C7C2001A39FD /* VEMainViewController.h */,
+				2C27374921F6C7C2001A39FD /* VEMainViewController.m */,
+				2C27374A21F6C7C2001A39FD /* VEMainViewController.xib */,
+			);
+			path = VEMainViewController;
+			sourceTree = "<group>";
+		};
+		2C27374E21F6C91C001A39FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C27375121F6C926001A39FD /* CoreGraphics.framework */,
+				2C27374F21F6C91C001A39FD /* AVFoundation.framework */,
+				6B4CF030ED1D0B9ECB6C6376 /* Pods_GMVideoEffectDemo.framework */,
+				E336AB05F5B31D7E31E19063 /* Pods_GMVideoEffectDemoTests.framework */,
+				C3A0C72D64222F05B96E759F /* Pods_GMVideoEffectDemoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C27375321F6C96D001A39FD /* GMVideoService */ = {
+			isa = PBXGroup;
+			children = (
+				2C27375421F6C96D001A39FD /* GMVideoService.h */,
+				2C27375521F6C96D001A39FD /* GMVideoService.m */,
+			);
+			path = GMVideoService;
+			sourceTree = "<group>";
+		};
+		2C27375721F6C9AA001A39FD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2C27375821F6C9AA001A39FD /* Video */,
+				2C27375E21F6C9AA001A39FD /* Audio */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2C27375821F6C9AA001A39FD /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				2C27375921F6C9AA001A39FD /* 01_nebula.mp4 */,
+				2C27375A21F6C9AA001A39FD /* 03_nebula.mp4 */,
+				2C27375B21F6C9AA001A39FD /* 04_quasar.mp4 */,
+				2C27375C21F6C9AA001A39FD /* 02_blackhole.mp4 */,
+				2C27375D21F6C9AA001A39FD /* 05_blackhole.mp4 */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		2C27375E21F6C9AA001A39FD /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				2C27375F21F6C9AA001A39FD /* Music */,
+				2C27376221F6C9AA001A39FD /* VoiceOvers */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		2C27375F21F6C9AA001A39FD /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				2C27376021F6C9AA001A39FD /* 02 Keep Going.m4a */,
+				2C27376121F6C9AA001A39FD /* 01 Star Gazing.m4a */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		2C27376221F6C9AA001A39FD /* VoiceOvers */ = {
+			isa = PBXGroup;
+			children = (
+				2C27376321F6C9AA001A39FD /* John F. Kennedy.m4a */,
+				2C27376421F6C9AA001A39FD /* Carl Sagan.m4a */,
+				2C27376521F6C9AA001A39FD /* Ronald Reagan.m4a */,
+			);
+			path = VoiceOvers;
+			sourceTree = "<group>";
+		};
+		2C45770821F6ED2E008F9607 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2C45776E21F6F00A008F9607 /* NSString+Utils */,
+				2C45775021F6ED2E008F9607 /* AVVideoPlayerViewController */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2C45775021F6ED2E008F9607 /* AVVideoPlayerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2C45775121F6ED2E008F9607 /* AVVideoPlayerViewController.m */,
+				2C45775221F6ED2E008F9607 /* GMVideoPlayerProtocol.h */,
+				2C45775321F6ED2E008F9607 /* AVVideoPlayerViewController.h */,
+			);
+			path = AVVideoPlayerViewController;
+			sourceTree = "<group>";
+		};
+		2C45776E21F6F00A008F9607 /* NSString+Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2C45776F21F6F00A008F9607 /* NSString+Utils.h */,
+				2C45777021F6F00A008F9607 /* NSString+Utils.m */,
+			);
+			path = "NSString+Utils";
+			sourceTree = "<group>";
+		};
+		4CE4910C0B35484272AC2B15 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5856E36255A87FCB77A64C16 /* Pods-GMVideoEffectDemo.debug.xcconfig */,
+				F5658623F4EE45A2AB3D45EE /* Pods-GMVideoEffectDemo.release.xcconfig */,
+				FC312998F09BFFA77412A0CE /* Pods-GMVideoEffectDemoTests.debug.xcconfig */,
+				DF505C6D03115F1994E7B6F7 /* Pods-GMVideoEffectDemoTests.release.xcconfig */,
+				A8CAF9496A218C2E2A6A8CA8 /* Pods-GMVideoEffectDemoUITests.debug.xcconfig */,
+				B03356D0E5DD7824061B6988 /* Pods-GMVideoEffectDemoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C27370D21F6C6D7001A39FD /* GMVideoEffectDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C27373A21F6C6D9001A39FD /* Build configuration list for PBXNativeTarget "GMVideoEffectDemo" */;
+			buildPhases = (
+				2696B78BED9E7540A7DB8B24 /* [CP] Check Pods Manifest.lock */,
+				2C27370A21F6C6D7001A39FD /* Sources */,
+				2C27370B21F6C6D7001A39FD /* Frameworks */,
+				2C27370C21F6C6D7001A39FD /* Resources */,
+				A366337FAAE86DEE523A2FA9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GMVideoEffectDemo;
+			productName = GMVideoEffectDemo;
+			productReference = 2C27370E21F6C6D7001A39FD /* GMVideoEffectDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2C27372521F6C6D9001A39FD /* GMVideoEffectDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C27373D21F6C6D9001A39FD /* Build configuration list for PBXNativeTarget "GMVideoEffectDemoTests" */;
+			buildPhases = (
+				649BEB653DE5DECBC7324189 /* [CP] Check Pods Manifest.lock */,
+				2C27372221F6C6D9001A39FD /* Sources */,
+				2C27372321F6C6D9001A39FD /* Frameworks */,
+				2C27372421F6C6D9001A39FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C27372821F6C6D9001A39FD /* PBXTargetDependency */,
+			);
+			name = GMVideoEffectDemoTests;
+			productName = GMVideoEffectDemoTests;
+			productReference = 2C27372621F6C6D9001A39FD /* GMVideoEffectDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2C27373021F6C6D9001A39FD /* GMVideoEffectDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C27374021F6C6D9001A39FD /* Build configuration list for PBXNativeTarget "GMVideoEffectDemoUITests" */;
+			buildPhases = (
+				6AAF0B79F4167EF8F4065928 /* [CP] Check Pods Manifest.lock */,
+				2C27372D21F6C6D9001A39FD /* Sources */,
+				2C27372E21F6C6D9001A39FD /* Frameworks */,
+				2C27372F21F6C6D9001A39FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C27373321F6C6D9001A39FD /* PBXTargetDependency */,
+			);
+			name = GMVideoEffectDemoUITests;
+			productName = GMVideoEffectDemoUITests;
+			productReference = 2C27373121F6C6D9001A39FD /* GMVideoEffectDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C27370621F6C6D7001A39FD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "BBias Xie";
+				TargetAttributes = {
+					2C27370D21F6C6D7001A39FD = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					2C27372521F6C6D9001A39FD = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 2C27370D21F6C6D7001A39FD;
+					};
+					2C27373021F6C6D9001A39FD = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 2C27370D21F6C6D7001A39FD;
+					};
+				};
+			};
+			buildConfigurationList = 2C27370921F6C6D7001A39FD /* Build configuration list for PBXProject "GMVideoEffectDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2C27370521F6C6D7001A39FD;
+			productRefGroup = 2C27370F21F6C6D7001A39FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C27370D21F6C6D7001A39FD /* GMVideoEffectDemo */,
+				2C27372521F6C6D9001A39FD /* GMVideoEffectDemoTests */,
+				2C27373021F6C6D9001A39FD /* GMVideoEffectDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C27370C21F6C6D7001A39FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C27376D21F6C9AA001A39FD /* John F. Kennedy.m4a in Resources */,
+				2C27376F21F6C9AA001A39FD /* Ronald Reagan.m4a in Resources */,
+				2C27376621F6C9AA001A39FD /* 01_nebula.mp4 in Resources */,
+				2C27376721F6C9AA001A39FD /* 03_nebula.mp4 in Resources */,
+				2C27376821F6C9AA001A39FD /* 04_quasar.mp4 in Resources */,
+				2C27374D21F6C7C2001A39FD /* VEMainViewController.xib in Resources */,
+				2C27371E21F6C6D9001A39FD /* LaunchScreen.storyboard in Resources */,
+				2C27376921F6C9AA001A39FD /* 02_blackhole.mp4 in Resources */,
+				2C27371B21F6C6D9001A39FD /* Assets.xcassets in Resources */,
+				2C27376E21F6C9AA001A39FD /* Carl Sagan.m4a in Resources */,
+				2C27371921F6C6D7001A39FD /* Main.storyboard in Resources */,
+				2C27376C21F6C9AA001A39FD /* 01 Star Gazing.m4a in Resources */,
+				2C27376B21F6C9AA001A39FD /* 02 Keep Going.m4a in Resources */,
+				2C27376A21F6C9AA001A39FD /* 05_blackhole.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C27372421F6C6D9001A39FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C27372F21F6C6D9001A39FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2696B78BED9E7540A7DB8B24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GMVideoEffectDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		649BEB653DE5DECBC7324189 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GMVideoEffectDemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AAF0B79F4167EF8F4065928 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GMVideoEffectDemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A366337FAAE86DEE523A2FA9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GMVideoEffectDemo/Pods-GMVideoEffectDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/MMPopupView/MMPopupView.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMPopupView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GMVideoEffectDemo/Pods-GMVideoEffectDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C27370A21F6C6D7001A39FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C27374C21F6C7C2001A39FD /* VEMainViewController.m in Sources */,
+				2C27371621F6C6D7001A39FD /* ViewController.m in Sources */,
+				2C27372121F6C6D9001A39FD /* main.m in Sources */,
+				2C45776D21F6ED2E008F9607 /* AVVideoPlayerViewController.m in Sources */,
+				2C27371321F6C6D7001A39FD /* AppDelegate.m in Sources */,
+				2C27375621F6C96D001A39FD /* GMVideoService.m in Sources */,
+				2C45777121F6F00A008F9607 /* NSString+Utils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C27372221F6C6D9001A39FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C27372B21F6C6D9001A39FD /* GMVideoEffectDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C27372D21F6C6D9001A39FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C27373621F6C6D9001A39FD /* GMVideoEffectDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2C27372821F6C6D9001A39FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C27370D21F6C6D7001A39FD /* GMVideoEffectDemo */;
+			targetProxy = 2C27372721F6C6D9001A39FD /* PBXContainerItemProxy */;
+		};
+		2C27373321F6C6D9001A39FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C27370D21F6C6D7001A39FD /* GMVideoEffectDemo */;
+			targetProxy = 2C27373221F6C6D9001A39FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2C27371721F6C6D7001A39FD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C27371821F6C6D7001A39FD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2C27371C21F6C6D9001A39FD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C27371D21F6C6D9001A39FD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2C27373821F6C6D9001A39FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2C27373921F6C6D9001A39FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2C27373B21F6C6D9001A39FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5856E36255A87FCB77A64C16 /* Pods-GMVideoEffectDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3WGDU9BBUJ;
+				INFOPLIST_FILE = GMVideoEffectDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gemo.GMVideoEffectDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		2C27373C21F6C6D9001A39FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5658623F4EE45A2AB3D45EE /* Pods-GMVideoEffectDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3WGDU9BBUJ;
+				INFOPLIST_FILE = GMVideoEffectDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gemo.GMVideoEffectDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		2C27373E21F6C6D9001A39FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC312998F09BFFA77412A0CE /* Pods-GMVideoEffectDemoTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GMVideoEffectDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gemo.GMVideoEffectDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GMVideoEffectDemo.app/GMVideoEffectDemo";
+			};
+			name = Debug;
+		};
+		2C27373F21F6C6D9001A39FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF505C6D03115F1994E7B6F7 /* Pods-GMVideoEffectDemoTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GMVideoEffectDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gemo.GMVideoEffectDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GMVideoEffectDemo.app/GMVideoEffectDemo";
+			};
+			name = Release;
+		};
+		2C27374121F6C6D9001A39FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8CAF9496A218C2E2A6A8CA8 /* Pods-GMVideoEffectDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GMVideoEffectDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gemo.GMVideoEffectDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GMVideoEffectDemo;
+			};
+			name = Debug;
+		};
+		2C27374221F6C6D9001A39FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B03356D0E5DD7824061B6988 /* Pods-GMVideoEffectDemoUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GMVideoEffectDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gemo.GMVideoEffectDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GMVideoEffectDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C27370921F6C6D7001A39FD /* Build configuration list for PBXProject "GMVideoEffectDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C27373821F6C6D9001A39FD /* Debug */,
+				2C27373921F6C6D9001A39FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C27373A21F6C6D9001A39FD /* Build configuration list for PBXNativeTarget "GMVideoEffectDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C27373B21F6C6D9001A39FD /* Debug */,
+				2C27373C21F6C6D9001A39FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C27373D21F6C6D9001A39FD /* Build configuration list for PBXNativeTarget "GMVideoEffectDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C27373E21F6C6D9001A39FD /* Debug */,
+				2C27373F21F6C6D9001A39FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C27374021F6C6D9001A39FD /* Build configuration list for PBXNativeTarget "GMVideoEffectDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C27374121F6C6D9001A39FD /* Debug */,
+				2C27374221F6C6D9001A39FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C27370621F6C6D7001A39FD /* Project object */;
+}
