@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,17 +35,26 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5I-Yt-RYC">
-                    <rect key="frame" x="172" y="617" width="30" height="30"/>
+                    <rect key="frame" x="172.5" y="617" width="30" height="30"/>
                     <state key="normal" title="Play"/>
                     <connections>
                         <action selector="onPlayButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="y17-vX-5ux"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTw-P0-p6s">
+                    <rect key="frame" x="112.5" y="617" width="30" height="30"/>
+                    <state key="normal" title="Test"/>
+                    <connections>
+                        <action selector="onTestButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="58d-vu-ff0"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="L5I-Yt-RYC" firstAttribute="leading" secondItem="XTw-P0-p6s" secondAttribute="trailing" constant="30" id="7ae-CX-xuH"/>
                 <constraint firstItem="yLe-uB-Wb4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="P9p-Uf-Fi2"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="jL6-Ky-ci7" secondAttribute="trailing" constant="8" id="YUv-lc-yfM"/>
+                <constraint firstItem="L5I-Yt-RYC" firstAttribute="bottom" secondItem="XTw-P0-p6s" secondAttribute="bottom" id="a6x-Ak-qRq"/>
                 <constraint firstItem="yLe-uB-Wb4" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="80" id="gUP-yM-mPj"/>
                 <constraint firstItem="L5I-Yt-RYC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="h9W-Qm-Rpm"/>
                 <constraint firstItem="jL6-Ky-ci7" firstAttribute="top" secondItem="yLe-uB-Wb4" secondAttribute="bottom" constant="8" id="iiP-dF-Y2J"/>

@@ -9,6 +9,7 @@
 #import "VEMainViewController.h"
 #import "AVVideoPlayerViewController.h"
 #import "Masonry/Masonry.h"
+#import "GMVideoService.h"
 
 @interface VEMainViewController ()
 
@@ -45,6 +46,13 @@
 - (IBAction)onPlayButtonTouchUpInside:(id)sender{
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"01_nebula.mp4" withExtension:nil];
     AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:url];
+    [self.playerViewController openWithPlayerItem:playerItem];
+    [self.playerViewController playVideo];
+}
+
+- (IBAction)onTestButtonTouchUpInside:(id)sender{
+    
+    AVPlayerItem *playerItem = [[GMVideoService sharedService] test2];
     [self.playerViewController openWithPlayerItem:playerItem];
     [self.playerViewController playVideo];
 }

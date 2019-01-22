@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GMVideoService : NSObject
 
 + (instancetype)sharedService;
+- (AVPlayerItem *)test2;
 - (void)test1;
 
 @end

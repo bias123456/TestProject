@@ -33,6 +33,7 @@
 		2C27376F21F6C9AA001A39FD /* Ronald Reagan.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2C27376521F6C9AA001A39FD /* Ronald Reagan.m4a */; };
 		2C45776D21F6ED2E008F9607 /* AVVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C45775121F6ED2E008F9607 /* AVVideoPlayerViewController.m */; };
 		2C45777121F6F00A008F9607 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C45777021F6F00A008F9607 /* NSString+Utils.m */; };
+		2CF7ACF521F710470037A66C /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF7ACF421F710470037A66C /* CoreImage.framework */; };
 		3ECD223A2C7AA68B07A4EF0A /* Pods_GMVideoEffectDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E336AB05F5B31D7E31E19063 /* Pods_GMVideoEffectDemoTests.framework */; };
 		49ACE3CFB09DD059C95079B8 /* Pods_GMVideoEffectDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A0C72D64222F05B96E759F /* Pods_GMVideoEffectDemoUITests.framework */; };
 /* End PBXBuildFile section */
@@ -93,6 +94,7 @@
 		2C45775321F6ED2E008F9607 /* AVVideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVVideoPlayerViewController.h; sourceTree = "<group>"; };
 		2C45776F21F6F00A008F9607 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
 		2C45777021F6F00A008F9607 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
+		2CF7ACF421F710470037A66C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		5856E36255A87FCB77A64C16 /* Pods-GMVideoEffectDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMVideoEffectDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GMVideoEffectDemo/Pods-GMVideoEffectDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		6B4CF030ED1D0B9ECB6C6376 /* Pods_GMVideoEffectDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GMVideoEffectDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8CAF9496A218C2E2A6A8CA8 /* Pods-GMVideoEffectDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMVideoEffectDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GMVideoEffectDemoUITests/Pods-GMVideoEffectDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF7ACF521F710470037A66C /* CoreImage.framework in Frameworks */,
 				2C27375221F6C926001A39FD /* CoreGraphics.framework in Frameworks */,
 				2C27375021F6C91C001A39FD /* AVFoundation.framework in Frameworks */,
 				1D7954D52D3A703263657E7E /* Pods_GMVideoEffectDemo.framework in Frameworks */,
@@ -207,6 +210,7 @@
 		2C27374E21F6C91C001A39FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2CF7ACF421F710470037A66C /* CoreImage.framework */,
 				2C27375121F6C926001A39FD /* CoreGraphics.framework */,
 				2C27374F21F6C91C001A39FD /* AVFoundation.framework */,
 				6B4CF030ED1D0B9ECB6C6376 /* Pods_GMVideoEffectDemo.framework */,
