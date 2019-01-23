@@ -77,6 +77,13 @@
     AVAsset *asset_3 = [AVAsset assetWithURL:url_3];
     NSArray *assetList = @[asset_1,asset_2,asset_3];
     
+    CMTime duration_1 = asset_1.duration;
+    CMTime duration_2 = asset_2.duration;
+    CMTime duration_3 = asset_3.duration;
+    CMTime duration = CMTimeMinimum(duration_1, duration_2);
+    duration = CMTimeMinimum(duration, duration_3);
+    CMTimeRange timeRange = CMTimeRangeMake(kCMTimeZero, duration);
+    
     
     AVMutableComposition *composition = [AVMutableComposition composition];
     
@@ -85,43 +92,55 @@
     AVMutableCompositionTrack *compositionTrack_3 = [composition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
     NSArray *compositionTrackList = @[compositionTrack_1,compositionTrack_2,compositionTrack_3];
     
-    for( NSInteger i = 0 ; i < 3 ; i++ ){
-        AVAsset *asset = assetList[i];
-        AVMutableCompositionTrack *compositionTrack = compositionTrackList[i];
-        AVAssetTrack *assetTrack = [[asset tracksWithMediaType:AVMediaTypeVideo] firstObject];
-        CMTimeRange timeRange = CMTimeRangeMake(kCMTimeZero, asset.duration);
-        [compositionTrack insertTimeRange:timeRange ofTrack:assetTrack atTime:kCMTimeZero error:nil];
-    }
+
+    NSError *error;
+    AVAssetTrack *assetTrack_1 = [[asset_1 tracksWithMediaType:AVMediaTypeVideo] firstObject];
+    [compositionTrack_1 insertTimeRange:timeRange ofTrack:assetTrack_1 atTime:kCMTimeZero error:&error];
     
-    CMTimeRange timeRange = CMTimeRangeMake(kCMTimeZero, asset_1.duration);
+
+    AVAssetTrack *assetTrack_2 = [[asset_2 tracksWithMediaType:AVMediaTypeVideo] firstObject];
+    [compositionTrack_2 insertTimeRange:timeRange ofTrack:assetTrack_2 atTime:kCMTimeZero error:&error];
+    
+    AVAssetTrack *assetTrack_3 = [[asset_3 tracksWithMediaType:AVMediaTypeVideo] firstObject];
+    [compositionTrack_3 insertTimeRange:timeRange ofTrack:assetTrack_3 atTime:kCMTimeZero error:nil];
     
     AVMutableVideoComposition *videoComposition =                           // 1
     [AVMutableVideoComposition
-     videoCompositionWithPropertiesOfAsset:composition];
+     videoCompositionWithPropertiesOfAsset:[composition copy]];
     NSMutableArray *transitionInstructions = [[NSMutableArray alloc] init];
     
     AVMutableVideoCompositionInstruction *videoCompositionInstruction = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
     
-    CGRect rect1 = CGRectMake(0, 0*0.3*videoComposition.renderSize.height, videoComposition.renderSize.width, 0.3*videoComposition.renderSize.height);
-    AVMutableVideoCompositionLayerInstruction *videoCompositionLayerInstruction_1 = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:[[asset_1 tracksWithMediaType:AVMediaTypeVideo] firstObject]];
-    [videoCompositionLayerInstruction_1 setCropRectangle:rect1 atTime:kCMTimeZero];
+    CGAffineTransform identityTransform = CGAffineTransformIdentity;
+    CGFloat targetHeight = 0.33333*videoComposition.renderSize.height;
     
-    CGRect rect2 = CGRectMake(0, 1*0.3*videoComposition.renderSize.height, videoComposition.renderSize.width, 0.3*videoComposition.renderSize.height);
-    AVMutableVideoCompositionLayerInstruction *videoCompositionLayerInstruction_2 = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:[[asset_2 tracksWithMediaType:AVMediaTypeVideo] firstObject]];
-    [videoCompositionLayerInstruction_2 setCropRectangle:rect2 atTime:kCMTimeZero];
+    CGRect rect_1 = CGRectMake(0, targetHeight, videoComposition.renderSize.width, 0.3*videoComposition.renderSize.height);
+    CGAffineTransform transform_1 = CGAffineTransformTranslate(identityTransform, 0, -1*targetHeight);
+    AVMutableVideoCompositionLayerInstruction *videoCompositionLayerInstruction_1 = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:compositionTrack_1];
+    [videoCompositionLayerInstruction_1 setCropRectangleRampFromStartCropRectangle:rect_1 toEndCropRectangle:rect_1 timeRange:timeRange];
+    [videoCompositionLayerInstruction_1 setTransformRampFromStartTransform:transform_1 toEndTransform:transform_1 timeRange:timeRange];
     
     
-    CGRect rect3 = CGRectMake(0, 2*0.3*videoComposition.renderSize.height, videoComposition.renderSize.width, 0.3*videoComposition.renderSize.height);
-    AVMutableVideoCompositionLayerInstruction *videoCompositionLayerInstruction_3 = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:[[asset_3 tracksWithMediaType:AVMediaTypeVideo] firstObject]];
-    [videoCompositionLayerInstruction_3 setCropRectangle:rect3 atTime:kCMTimeZero];
+    CGRect rect_2 = CGRectMake(0, targetHeight, videoComposition.renderSize.width, 0.3*videoComposition.renderSize.height);
+    CGAffineTransform transform_2 = CGAffineTransformTranslate(identityTransform, 0, 0*targetHeight);
+    AVMutableVideoCompositionLayerInstruction *videoCompositionLayerInstruction_2 = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:compositionTrack_2];
+    [videoCompositionLayerInstruction_2 setCropRectangleRampFromStartCropRectangle:rect_2 toEndCropRectangle:rect_2 timeRange:timeRange];
+    [videoCompositionLayerInstruction_2 setTransformRampFromStartTransform:transform_2 toEndTransform:transform_2 timeRange:timeRange];
+    
+    
+    CGRect rect_3 = CGRectMake(0, targetHeight, videoComposition.renderSize.width, 0.3*videoComposition.renderSize.height);
+    CGAffineTransform transform_3 = CGAffineTransformTranslate(identityTransform, 0, 1*targetHeight);
+    AVMutableVideoCompositionLayerInstruction *videoCompositionLayerInstruction_3 = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:compositionTrack_3];
+    [videoCompositionLayerInstruction_3 setCropRectangleRampFromStartCropRectangle:rect_3 toEndCropRectangle:rect_3 timeRange:timeRange];
+    [videoCompositionLayerInstruction_3 setTransformRampFromStartTransform:transform_3 toEndTransform:transform_3 timeRange:timeRange];
     
     
     videoCompositionInstruction.timeRange = timeRange;
-    videoCompositionInstruction.layerInstructions = @[videoCompositionLayerInstruction_1,videoCompositionLayerInstruction_1,videoCompositionLayerInstruction_2,videoCompositionLayerInstruction_3];
+    videoCompositionInstruction.layerInstructions = @[videoCompositionLayerInstruction_1,videoCompositionLayerInstruction_2,videoCompositionLayerInstruction_3];
     
     [transitionInstructions addObject:videoCompositionInstruction];
     videoComposition.instructions = transitionInstructions;
-    
+
     
     AVPlayerItem *item = [AVPlayerItem playerItemWithAsset:[composition copy]];
     item.videoComposition = videoComposition;
