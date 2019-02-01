@@ -16,6 +16,8 @@
 
 @property (nonatomic,readwrite,strong) AVVideoPlayerViewController *playerViewController;
 @property (nonatomic,readwrite,strong) IBOutlet UIView *playerView_placeholderView;
+@property (nonatomic,readwrite,strong) IBOutlet UIView *overlapView;
+
 @end
 
 @implementation VEMainViewController
@@ -44,17 +46,39 @@
 */
 
 - (IBAction)onPlayButtonTouchUpInside:(id)sender{
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"01_nebula.mp4" withExtension:nil];
-    AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:url];
+//    NSURL *url = [[NSBundle mainBundle] URLForResource:@"01_nebula.mp4" withExtension:nil];
+//    AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:url];
+//    [self.playerViewController openWithPlayerItem:playerItem];
+//    [self.playerViewController playVideo];
+    
+    
+    AVPlayerItem *playerItem = [[GMVideoService sharedService] makeCombinedVideo];
+    
+    
+    AVSynchronizedLayer *overlapLayer = [[GMVideoService sharedService] createOverlapSubjectsForPlayerItem:playerItem bounds:self.overlapView.bounds];
+    [self.overlapView.layer addSublayer:overlapLayer];
+    //[self.overlapView.layer setNeedsDisplay];
+    
+    //    CGFloat scale = fminf(overlapLayer.bounds.size.width / TH720pVideoRect.size.width, overlapLayer.bounds.size.height /TH720pVideoRect.size.height);
+    //    CGRect videoRect = AVMakeRectWithAspectRatioInsideRect(overlapLayer.bounds.size, self.view.bounds);
+    //    self.overlapView.center = CGPointMake( CGRectGetMidX(videoRect), CGRectGetMidY(videoRect));
+    //    self.overlapView.transform = CGAffineTransformMakeScale(scale, scale);
+    
+    
     [self.playerViewController openWithPlayerItem:playerItem];
     [self.playerViewController playVideo];
 }
 
-- (IBAction)onTestButtonTouchUpInside:(id)sender{
+- (IBAction)onExportButtonTouchUpInside:(id)sender{
     
-    AVPlayerItem *playerItem = [[GMVideoService sharedService] test2];
-    [self.playerViewController openWithPlayerItem:playerItem];
-    [self.playerViewController playVideo];
+
+    
+    AVPlayerItem *playerItem = [[GMVideoService sharedService] makeCombinedVideo];
+    
+    
+    AVSynchronizedLayer *overlapLayer = [[GMVideoService sharedService] createOverlapSubjectsForPlayerItem:playerItem bounds:self.overlapView.bounds];
+    
+    [[GMVideoService sharedService] makeExportableWithPlayerItem:playerItem titleLayer:overlapLayer viewBounds:overlapLayer.bounds];
 }
 
 @end

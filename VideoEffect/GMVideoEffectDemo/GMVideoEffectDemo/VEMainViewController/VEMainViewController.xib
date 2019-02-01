@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VEMainViewController">
             <connections>
+                <outlet property="overlapView" destination="nDU-Xm-Fe3" id="qOc-fg-WYd"/>
                 <outlet property="playerView_placeholderView" destination="jL6-Ky-ci7" id="M9Q-nB-Oj9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -34,6 +35,10 @@
                         <constraint firstAttribute="width" secondItem="jL6-Ky-ci7" secondAttribute="height" multiplier="16:9" id="b7h-M5-YMs"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nDU-Xm-Fe3">
+                    <rect key="frame" x="8" y="129" width="359" height="202"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5I-Yt-RYC">
                     <rect key="frame" x="172.5" y="617" width="30" height="30"/>
                     <state key="normal" title="Play"/>
@@ -42,27 +47,31 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTw-P0-p6s">
-                    <rect key="frame" x="112.5" y="617" width="30" height="30"/>
-                    <state key="normal" title="Test"/>
+                    <rect key="frame" x="97.5" y="617" width="45" height="30"/>
+                    <state key="normal" title="Export"/>
                     <connections>
-                        <action selector="onTestButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="58d-vu-ff0"/>
+                        <action selector="onExportButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="dmd-sr-yo3"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="L5I-Yt-RYC" firstAttribute="leading" secondItem="XTw-P0-p6s" secondAttribute="trailing" constant="30" id="7ae-CX-xuH"/>
+                <constraint firstItem="nDU-Xm-Fe3" firstAttribute="bottom" secondItem="jL6-Ky-ci7" secondAttribute="bottom" id="CFC-56-8wY"/>
                 <constraint firstItem="yLe-uB-Wb4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="P9p-Uf-Fi2"/>
+                <constraint firstItem="nDU-Xm-Fe3" firstAttribute="trailing" secondItem="jL6-Ky-ci7" secondAttribute="trailing" id="XJo-hn-USF"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="jL6-Ky-ci7" secondAttribute="trailing" constant="8" id="YUv-lc-yfM"/>
+                <constraint firstItem="nDU-Xm-Fe3" firstAttribute="leading" secondItem="jL6-Ky-ci7" secondAttribute="leading" id="ZjY-La-oSS"/>
                 <constraint firstItem="L5I-Yt-RYC" firstAttribute="bottom" secondItem="XTw-P0-p6s" secondAttribute="bottom" id="a6x-Ak-qRq"/>
                 <constraint firstItem="yLe-uB-Wb4" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="80" id="gUP-yM-mPj"/>
                 <constraint firstItem="L5I-Yt-RYC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="h9W-Qm-Rpm"/>
                 <constraint firstItem="jL6-Ky-ci7" firstAttribute="top" secondItem="yLe-uB-Wb4" secondAttribute="bottom" constant="8" id="iiP-dF-Y2J"/>
+                <constraint firstItem="nDU-Xm-Fe3" firstAttribute="top" secondItem="jL6-Ky-ci7" secondAttribute="top" id="lzB-z9-MbD"/>
                 <constraint firstItem="jL6-Ky-ci7" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="8" id="rEI-1g-ym0"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="L5I-Yt-RYC" secondAttribute="bottom" constant="20" id="ryi-vh-1bj"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="24.5" y="51.5"/>
+            <point key="canvasLocation" x="23.199999999999999" y="50.824587706146929"/>
         </view>
     </objects>
 </document>

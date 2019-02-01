@@ -9,6 +9,12 @@
 #import "GMVideoService.h"
 #import <AVFoundation/AVFoundation.h>
 #import <CoreImage/CoreImage.h>
+#import <UIKit/UIKit.h>
+
+
+#ifndef WS
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+#endif
 
 @implementation GMVideoService
 
@@ -63,7 +69,7 @@
 }
 
 
-- (AVPlayerItem *)test2{
+- (AVPlayerItem *)makeCombinedVideo{
     
     
     
@@ -122,10 +128,12 @@
     
     
     CGRect rect_2 = CGRectMake(0, targetHeight, videoComposition.renderSize.width, 0.3*videoComposition.renderSize.height);
+
     CGAffineTransform transform_2 = CGAffineTransformTranslate(identityTransform, 0, 0*targetHeight);
+    CGAffineTransform transform_2_end = CGAffineTransformTranslate(transform_2, videoComposition.renderSize.width, 0);
     AVMutableVideoCompositionLayerInstruction *videoCompositionLayerInstruction_2 = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:compositionTrack_2];
     [videoCompositionLayerInstruction_2 setCropRectangleRampFromStartCropRectangle:rect_2 toEndCropRectangle:rect_2 timeRange:timeRange];
-    [videoCompositionLayerInstruction_2 setTransformRampFromStartTransform:transform_2 toEndTransform:transform_2 timeRange:timeRange];
+    [videoCompositionLayerInstruction_2 setTransformRampFromStartTransform:transform_2 toEndTransform:transform_2_end timeRange:timeRange];
     
     
     CGRect rect_3 = CGRectMake(0, targetHeight, videoComposition.renderSize.width, 0.3*videoComposition.renderSize.height);
@@ -147,6 +155,166 @@
     
     return item;
     
+}
+
+- (AVSynchronizedLayer *)createOverlapSubjectsForPlayerItem:(AVPlayerItem *)item bounds:(CGRect)bounds{
+    AVSynchronizedLayer *syncLayer = [AVSynchronizedLayer synchronizedLayerWithPlayerItem:item];
+    syncLayer.bounds = bounds;
+    syncLayer.position = CGPointMake(CGRectGetMidX(bounds),
+                                     CGRectGetMidY(bounds));
+    
+    
+    CALayer *titleLayer = [self buildTitleLayerWithBounds:bounds];
+    CAAnimation *animation = [self makeFadeInFadeOutAnimationStartTiem:CMTimeGetSeconds(kCMTimeZero) duration:CMTimeGetSeconds(item.asset.duration) bounds:bounds];
+    [titleLayer addAnimation:animation forKey:nil];
+    
+    
+    [syncLayer addSublayer:titleLayer];
+    
+    return syncLayer;
+}
+
+
+- (CALayer *)makeTextLayerWithText:(NSString *)text position:(CGPoint)position{
+    
+    CGFloat fontSize = 20.0f;
+    UIFont *font = [UIFont fontWithName:@"GillSans-Bold" size:fontSize];
+    
+    NSDictionary *attrs =
+    @{NSFontAttributeName            : font,
+      NSForegroundColorAttributeName : (id) [UIColor yellowColor].CGColor};
+    
+    NSAttributedString *string =
+    [[NSAttributedString alloc] initWithString:text attributes:attrs];
+    
+    CGSize textSize = [text sizeWithAttributes:attrs];
+    
+    CATextLayer *layer = [CATextLayer layer];
+    layer.string = string;
+    layer.bounds = CGRectMake(0.0f, 0.0f, textSize.width, textSize.height);
+    layer.position = position;
+    layer.backgroundColor = [UIColor clearColor].CGColor;
+    
+    return layer;
+}
+
+- (CAAnimation *)makeFadeInFadeOutAnimationStartTiem:(CGFloat)startTime duration:(CGFloat)duration bounds:(CGRect)bounds{
+    
+    //animation.values = @[@0.0f, @0.99];
+    //animation.keyTimes = @[@0.0f, @1.0f];
+    //    animation.values = @[@0.0f, @1.0, @1.0f, @0.0f];
+    //    animation.keyTimes = @[@0.0f, @0.25f, @0.75f, @1.0f];
+    
+//    CABasicAnimation *animation =
+//    [CABasicAnimation animationWithKeyPath:@"opacity"];
+//    animation.fromValue = @(0.0f);
+//    animation.toValue = @(1.0f);
+    
+    CABasicAnimation *animation =
+    [CABasicAnimation animationWithKeyPath:@"bounds"];
+    CGRect bounds_start = bounds;
+    //bounds_start.origin.x += 0.5*bounds.size.width;
+    bounds_start.size.width = 0;
+    
+    animation.fromValue = [NSValue valueWithCGRect:bounds_start];
+    animation.toValue = [NSValue valueWithCGRect:bounds];
+    
+    
+    animation.beginTime =  (startTime<FLT_EPSILON)?AVCoreAnimationBeginTimeAtZero:startTime;//startTime;
+    animation.duration = duration;
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    animation.removedOnCompletion = NO;
+    
+    return animation;
+}
+
+- (CALayer *)buildTitleLayerWithBounds:(CGRect)bounds {
+    
+//    CGPoint position = CGPointMake(CGRectGetMidX(bounds),
+//                                       CGRectGetMidY(bounds));
+//    CALayer *ret = [self makeTextLayerWithText:@"视频效果测试程序" position:position];
+//    return ret;
+
+    
+    CALayer *titleLayer = [CALayer layer];                              // 2
+    titleLayer.bounds = bounds;
+    titleLayer.anchorPoint = CGPointZero;
+    titleLayer.masksToBounds = YES;
+    titleLayer.backgroundColor = [UIColor clearColor].CGColor;
+    titleLayer.position =CGPointZero;// CGPointMake(CGRectGetMidX(bounds),CGRectGetMidY(bounds));
+    
+    CGPoint textPosition = CGPointMake(CGRectGetMidX(bounds),CGRectGetMidY(bounds));
+    CALayer *textlayer = [self makeTextLayerWithText:@"视频效果测试程序" position:textPosition];
+    [titleLayer addSublayer:textlayer];
+    
+    return titleLayer;
+}
+
+
+- (void)makeExportableWithPlayerItem:(AVPlayerItem *)playerItem titleLayer:(CALayer *)titleLayer viewBounds:(CGRect)viewBounds{
+
+    AVAsset *asset = playerItem.asset;
+    AVMutableVideoComposition *videoComposition = (AVMutableVideoComposition *)(playerItem.videoComposition);
+        
+    CALayer *animationLayer = [CALayer layer];                          // 1
+    animationLayer.frame = viewBounds;
+        
+    CALayer *videoLayer = [CALayer layer];
+    videoLayer.frame = CGRectMake(0, 0,videoComposition.renderSize.width , videoComposition.renderSize.height);;
+        
+    [animationLayer addSublayer:videoLayer];                            // 2
+    [animationLayer addSublayer:titleLayer];
+        
+    animationLayer.geometryFlipped = YES;                              // 3
+        
+    AVVideoCompositionCoreAnimationTool *animationTool =                // 4
+        [AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:videoLayer
+                                                                                                     inLayer:animationLayer];
+
+    videoComposition.animationTool = animationTool;                                  // 5
+    
+    
+    NSString *presetName = AVAssetExportPresetHighestQuality;
+    AVAssetExportSession *session =
+    [[AVAssetExportSession alloc] initWithAsset:[asset copy] presetName:presetName];
+    //session.audioMix = self.audioMix;
+    session.videoComposition = videoComposition;
+    
+    
+    session.outputURL = [self exportURL];
+    session.outputFileType = AVFileTypeMPEG4;
+    [session exportAsynchronouslyWithCompletionHandler:^{        // 2
+        
+        dispatch_async(dispatch_get_main_queue(), ^{                        // 1
+            AVAssetExportSessionStatus status = session.status;
+            if (status == AVAssetExportSessionStatusCompleted) {
+                //[self writeExportedVideoToAssetsLibrary];
+                UISaveVideoAtPathToSavedPhotosAlbum(session.outputURL.absoluteString, nil, nil, NULL);
+            } else {
+                NSLog(@"导出失败。");
+            }
+        });
+    }];
+}
+
+
+
+
+
+- (NSURL *)exportURL {                                                      // 5
+    NSString *filePath = nil;
+    NSUInteger count = 0;
+    do {
+        filePath = NSTemporaryDirectory();
+        NSString *numberString = count > 0 ?
+        [NSString stringWithFormat:@"-%li", (unsigned long) count] : @"";
+        NSString *fileNameString =
+        [NSString stringWithFormat:@"Masterpiece-%@.m4v", numberString];
+        filePath = [filePath stringByAppendingPathComponent:fileNameString];
+        count++;
+    } while ([[NSFileManager defaultManager] fileExistsAtPath:filePath]);
+    
+    return [NSURL fileURLWithPath:filePath];
 }
 
 - (void)test1{

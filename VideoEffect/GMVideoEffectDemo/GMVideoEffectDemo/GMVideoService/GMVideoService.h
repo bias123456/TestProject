@@ -14,7 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GMVideoService : NSObject
 
 + (instancetype)sharedService;
-- (AVPlayerItem *)test2;
+- (AVPlayerItem *)makeCombinedVideo;
+- (AVSynchronizedLayer *)createOverlapSubjectsForPlayerItem:(AVPlayerItem *)item bounds:(CGRect)bounds;
+- (void)makeExportableWithPlayerItem:(AVPlayerItem *)playerItem titleLayer:(CALayer *)titleLayer viewBounds:(CGRect)viewBounds;
 - (void)test1;
 
 @end
