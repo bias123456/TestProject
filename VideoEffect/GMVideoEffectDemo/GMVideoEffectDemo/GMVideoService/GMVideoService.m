@@ -337,4 +337,31 @@
 
 }
 
+- (void)addFilter{
+    
+    AVAsset *asset = nil;
+    [AVMutableVideoComposition videoCompositionWithAsset:asset applyingCIFiltersWithHandler:^(AVAsynchronousCIImageFilteringRequest * _Nonnull request) {
+        
+        CIImage *inputImage = request.sourceImage;
+        CIFilter *filter = [CIFilter filterWithName:@"my_filter"];
+        [filter setValue:inputImage forKey:@"inputImage"];
+        //可以加多个滤镜
+        
+        CIImage* outputImage = [filter valueForKey:@"outputImage"];
+
+        if( outputImage != nil ){
+            [request finishWithImage:outputImage context:nil];
+        }else{
+            NSError *error = [NSError errorWithDomain:NSPOSIXErrorDomain code:-1 userInfo:nil];
+            [request finishWithError:error];
+        }
+        
+    }];
+//    AVMutableComposition
+//    AVComposition
+//    AVCaptureSession
+    //AVAudioSession
+    //AVCaptureMovieFileOutput
+}
+
 @end
