@@ -68,10 +68,104 @@
     
 }
 
-
 - (AVPlayerItem *)makeCombinedVideo{
+    return [self makeCombinedVideo_1];
+}
+
+- (void)test{
+    AVQueuePlayer *player = nil;
+}
+
+- (AVPlayerItem *)makeCombinedVideo_1{
+    NSError *error;
+    AVMutableComposition *composition = [AVMutableComposition composition];
+    NSArray *fileNameList = @[@"04_quasar.mp4",@"01_nebula.mp4",@"03_nebula.mp4"];
+    for( NSString *fileName in fileNameList ){
+        NSURL *url = [[NSBundle mainBundle] URLForResource:fileName withExtension:nil];
+        AVAsset *asset = [AVAsset assetWithURL:url];
+        AVAssetTrack *assetTrack = [[asset tracksWithMediaType:AVMediaTypeVideo] firstObject];
+        
+        AVMutableCompositionTrack *compositionTrack = [composition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
+        [compositionTrack insertTimeRange:assetTrack.timeRange ofTrack:assetTrack atTime:kCMTimeZero error:&error];
+    }
+    
+    AVVideoComposition *videoComposition = [AVVideoComposition videoCompositionWithPropertiesOfAsset:composition];
+    
+//    AVVideoComposition *videoComposition_filter = [AVVideoComposition videoCompositionWithAsset:composition applyingCIFiltersWithHandler:^(AVAsynchronousCIImageFilteringRequest * _Nonnull request) {
+//
+//        CIImage *inputImage = request.sourceImage;
+//        CIFilter *filter = [CIFilter filterWithName:@"CICircularWrap"];
+//        [filter setValue:inputImage forKey:@"inputImage"];
+//        [filter setDefaults];
+//        //可以加多个滤镜
+//
+//        CIImage* outputImage = [filter valueForKey:@"outputImage"];
+//
+//
+//        if( outputImage != nil ){
+//            [request finishWithImage:outputImage context:nil];
+//        }else{
+//            NSError *error = [NSError errorWithDomain:NSPOSIXErrorDomain code:-1 userInfo:nil];
+//            [request finishWithError:error];
+//        }
+//
+//    }];
+    
+
+    
+ 
+    NSArray *instructions = videoComposition.instructions;
+    for( AVVideoCompositionInstruction *instruction in instructions ){
+        NSLog(@"instruction=%@",instruction);
+        NSLog(@"instruction class=%@",[instruction class]);
+        NSArray *layerInstructions = instruction.layerInstructions;
+        NSInteger layerInstructionsCount = layerInstructions.count;
+        for( NSInteger layerInstructionsIndex=0 ; layerInstructionsIndex<layerInstructionsCount ; layerInstructionsIndex++ ){
+            AVMutableVideoCompositionLayerInstruction *layerInstruction = layerInstructions[layerInstructionsIndex];
+            NSLog(@"layerInstruction=%@",layerInstruction);
+            CGFloat layerHeight = videoComposition.renderSize.height/layerInstructionsCount;
+            CGRect rect;
+            rect.origin.x = 0;
+            rect.size.width = videoComposition.renderSize.width-rect.origin.x;
+            rect.size.height = layerHeight;
+            rect.origin.y = 0.5 * (videoComposition.renderSize.height-rect.size.height);//取中间位置
+            [layerInstruction setCropRectangleRampFromStartCropRectangle:rect toEndCropRectangle:rect timeRange:instruction.timeRange];
+            
+            CGFloat ty=0;
+            if( (layerInstructionsCount % 2) == 1 ){
+                //奇数
+                ty = layerHeight * (0.0 + (layerInstructionsIndex-layerInstructionsCount/2));
+            }else{
+                //偶数
+                ty = layerHeight * (0.5 + (layerInstructionsIndex-layerInstructionsCount/2));
+            }
+            CGAffineTransform startTransform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, ty);
+            CGAffineTransform endTransform;
+        
+            if( ((layerInstructionsCount % 2) == 1) && (layerInstructionsIndex == (layerInstructionsCount/2))){
+                //当layerInstructionsCount为奇数个，并且layerInstructionsIndex为中间的时候
+                endTransform = CGAffineTransformTranslate(startTransform, videoComposition.renderSize.width, 0);
+            }else{
+                endTransform = startTransform;
+            }
+            
+
+            [layerInstruction setTransformRampFromStartTransform:startTransform toEndTransform:endTransform timeRange:instruction.timeRange];
+        }
+
+    }
+ 
+    AVPlayerItem *item = [AVPlayerItem playerItemWithAsset:composition];
+    item.videoComposition = videoComposition;
     
     
+    
+    return item;
+}
+
+- (AVPlayerItem *)makeCombinedVideo_0{
+    
+
     
     
     NSURL *url_1 = [[NSBundle mainBundle] URLForResource:@"01_nebula.mp4" withExtension:nil];
@@ -110,9 +204,35 @@
     AVAssetTrack *assetTrack_3 = [[asset_3 tracksWithMediaType:AVMediaTypeVideo] firstObject];
     [compositionTrack_3 insertTimeRange:timeRange ofTrack:assetTrack_3 atTime:kCMTimeZero error:nil];
     
-    AVMutableVideoComposition *videoComposition =                           // 1
-    [AVMutableVideoComposition
-     videoCompositionWithPropertiesOfAsset:[composition copy]];
+    
+
+    AVMutableVideoComposition *videoComposition = [AVMutableVideoComposition videoCompositionWithPropertiesOfAsset:[composition copy]];
+    
+//    AVMutableVideoComposition *videoComposition = [AVMutableVideoComposition videoCompositionWithAsset:composition applyingCIFiltersWithHandler:^(AVAsynchronousCIImageFilteringRequest * _Nonnull request) {
+//
+//            CIImage *inputImage = request.sourceImage;
+//            CIFilter *filter = [CIFilter filterWithName:@"CICircularWrap"];
+//            [filter setValue:inputImage forKey:@"inputImage"];
+//            [filter setDefaults];
+//            //可以加多个滤镜
+//
+//            CIImage* outputImage = [filter valueForKey:@"outputImage"];
+//
+//
+//            if( outputImage != nil ){
+//                [request finishWithImage:outputImage context:nil];
+//            }else{
+//                NSError *error = [NSError errorWithDomain:NSPOSIXErrorDomain code:-1 userInfo:nil];
+//                [request finishWithError:error];
+//            }
+//
+//        }];
+    
+    
+    
+    
+    
+    
     NSMutableArray *transitionInstructions = [[NSMutableArray alloc] init];
     
     AVMutableVideoCompositionInstruction *videoCompositionInstruction = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
