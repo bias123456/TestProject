@@ -111,6 +111,8 @@
     NSURL *movieURL = [NSURL fileURLWithPath:pathToMovie];
     
     
+    
+    
     GPUImageGaussianBlurFilter *filter = [[GPUImageGaussianBlurFilter alloc] init];
     filter.blurRadiusInPixels = 4;
     
